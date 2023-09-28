@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zhaoyang Zhang</title>
+    <style>
+body{
+  background-image: url(./sea.png);
+  background-size: cover;
+}
+#clock {
+  background-color: #333;
+  margin-top: 300px;
+}
+.label{
+    display:inline-block;
+    text-align: center;
+    font-size:10px;
+    transition:left 1s,top 1s;
+    transform-origin: 0 0;
+    width: 50px;
+}
+.out{
+  width: 100px;
+  height: 400px;
+  line-height: 100px;
+  background-image: url(./sea.png);
+  background-size: contain;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text; 
+  font-size: 100px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-10%,-50%);
+}
+.image-container {
+  background-color: transparent;
+}
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+    </style>
+</head>
+ 
+<body>
+<div id="clock"></div>
+<div class="out">
+  时钟
+</div>
+
+
+
+</body>
+ <script>
+let weekText = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"];
+// 使用循环生成月日时分秒
+let monthText = [];
+  for(let i=0;i<12;i++){
+    if(i<9){
+      let j=i+1
+      monthText[i]='0'+j+'月';
+    }else{
+      monthText[i]=i+1+'月';
+    }
+  }
+let dayText = [];
+  for(let i=0;i<31;i++){
+    if(i<9){
+      let j=i+1
+      dayText[i]='0'+j+'号';
+    }else{
+      dayText[i]=i+1+'号';
+    }
+  }
+let hourText = [];
+  for(let i=0;i<24;i++){
+    if(i<10){
+      hourText[i]='0'+i+'点';
+    }else{
+      hourText[i]=i+'点';
+    }
+  }
+let minuteText = [];
+  for(let i=0;i<60;i++){
+    if(i<10){
+      minuteText[i]='0'+i+'分';
+    }else{
+      minuteText[i]=i+'分';
+    }
+  }
+let secondText = [];
+  for(let i=0;i<60;i++){
+    if(i<9){
+      let j=i+1
+      secondText[i]='0'+j+'s';
+    }else{
+      secondText[i]=i+1+'s';
+    }
+  }
+ 
+  // 存放dom元素的数组
+let monthList = [];
+let dayList = [];
+let weekList = [];
+let hourList = [];
+let minuteList = [];
+let secondList = [];
+ 
+//二维数组 存放文字内容及页面显示标签
+let timeTextSet = [
+    [monthText, monthList],
+    [dayText, dayList],
+    [weekText, weekList],
+    [hourText, hourList],
+    [minuteText, minuteList],
+    [secondText, secondList]
+];
+console.log(timeTextSet);
+// 判断是否为旋转页面
+let isRotating = false;
+//时钟页面
+let clock;
+window.onload = function () {
+    init();
+    // 每隔100ms获得 当前时间
+    setInterval(function () {
+        runTime();
+    }, 100);
+ 
+    // 旋转之前定位到当前时间
+    locateCurrent();
+    // 变成旋转样式
+    setTimeout(function () {
+        toRotate();
+    }, 100);
+}
+// 初始化函数
+function init() {
+    clock = document.getElementById('clock');
+    // 生成标签 存放文字展示
+    for (let i = 0; i < timeTextSet.length; i++) {
+        for (let j = 0; j < timeTextSet[i][0].length; j++) {
+            let temp = createLabel(timeTextSet[i][0][j]);
+            clock.appendChild(temp);
+            // 将生成的标签存放在数组list中
+            timeTextSet[i][1].push(temp);
+        }
+    }
+}
+ 
+// 创建标签并将文字填充标签内 接收参数为文字内容
+function createLabel(text) {
+    let div = document.createElement('div');
+    div.classList.add('label');
+    div.innerText = text;
+    return div;
+}
+ 
+function runTime() {
+    //当前时间获取
+    let now = new Date();
+    let month = now.getMonth();
+    let day = now.getDate();
+    let week = now.getDay();
+    let hour = now.getHours();
+    let minute = now.getMinutes();
+    let seconds = now.getSeconds();
+ 
+    // 初始化时间颜色 并将走过的时间设置为黄色
+    initStyle();
+ 
+    // 将当前时间月份存放在数组中
+    let nowValue = [month, day - 1, week, hour, minute, seconds];
+    for (let i = 0; i < nowValue.length; i++) {
+        let num = nowValue[i];
+        timeTextSet[i][1][num].style.color = 'rgb(255, 0, 191)';
+        timeTextSet[i][1][num].style.width = '65px';
+        timeTextSet[i][1][num].style.borderBottom = '1px solid rgb(255, 0, 255)';
+    }
+ 
+    // 变成旋转时钟
+    if (isRotating) {
+        // 圆心位置确定
+        let widthMid = document.body.clientWidth / 2
+        let heightMid = document.body.clientHeight/2
+        // 将每一个dom元素确定到圆的位置
+        for (let i = 0; i < timeTextSet.length; i++) {
+            for (let j = 0; j < timeTextSet[i][0].length; j++) {
+                // 计算出每一个元素的位置  x y 坐标，圆的半径与时分秒的位置有关
+                let r = (i + 1) * 35 + 30 * i;
+                // 计算每一个平均的角度  将每一个单位对齐,再转化成弧度
+                let deg = 360 / timeTextSet[i][1].length * (j - nowValue[i]) ;
+                // 计算dom元素的坐标
+                let x = r * Math.sin(deg * Math.PI / 180) + widthMid;
+                let y = heightMid - r*Math.cos(deg * Math.PI / 180);
+                // 样式
+                let temp =  timeTextSet[i][1][j];
+                temp.style.transform = 'rotate(' + (-90 + deg ) + 'deg)';
+                temp.style.left = x + 'px';
+                temp.style.top = y + 'px';
+            }
+        }
+    }
+}
+ 
+// 将所有标签置为灰色
+function initStyle() {
+    let label = document.getElementsByClassName('label');
+    for (let i = 0; i < label.length; i++) {
+        label[i].style.color = 'rgb(251, 255, 0)';
+        label[i].style.borderBottom = 'none';
+        label[i].style.width = '30px';
+        label[i].style.background = 'none';
+    }
+}
+ 
+function locateCurrent() {
+    for (let i = 0; i < timeTextSet.length; i++) {
+        for (let j = 0; j < timeTextSet[i][1].length; j++) {
+            // 获取原来的位置  再修改position 设置left top
+            let tempX = timeTextSet[i][1][j].offsetLeft + "px";
+            let tempY = timeTextSet[i][1][j].offsetTop + "px";
+            // console.log(timeTextSet[i][1][j]);
+            // 利用let 防止闭包
+            setTimeout(function () {
+                timeTextSet[i][1][j].style.position = "absolute";
+                timeTextSet[i][1][j].style.left = tempX;
+                timeTextSet[i][1][j].style.top = tempY;
+            }, 50);
+        }
+    }
+}
+ 
+function toRotate() {
+    isRotating = true;
+    clock.style.transform = "rotate(90deg)";
+}
+var out=document.querySelector('.out')
+  out.onclick=function(){
+    window.open('vitaminMain.html');
+  }
+ </script>
+</html>
