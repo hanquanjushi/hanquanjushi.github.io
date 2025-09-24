@@ -14,7 +14,7 @@ comments: true
 
 2. Add `clht_clear()` to support usage
 
-View complete code change from my [forked repo here](https://github.com/ziyueqiu/CLHT)
+View complete code change from my [forked repo here](https://github.com/ZhaoyangZhang/CLHT)
 
 ## Code change for usage
 

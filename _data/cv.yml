@@ -2,7 +2,7 @@
   type: map
   contents:
     - name: Full Name
-      value: Ziyue Qiu
+      value: Zhaoyang Zhang
     - name: Date of Birth
       value: Jan 2002
     - name: Languages
@@ -12,11 +12,11 @@
   type: time_table
   contents:
     - title: PhD
-      institution: Carnegie Mellon University (CMU), Pittsburgh, USA
+      institution: HKUST (CMU), Pittsburgh, USA
       year: 2022
       description:
         - Computer Science
-        - Advisor(s) Greg Ganger and George Amvrosiadis
+        - Advisor(s) Jiasi Shen and George Amvrosiadis
     - title:  Bachelor
       institution: University of Science and Technology of China (USTC), Hefei, China
       year: 2018
