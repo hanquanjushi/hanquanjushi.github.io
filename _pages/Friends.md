@@ -13,3 +13,6 @@ nav_order: 6
 [Chang Li @ USTC](https://github.com/ivcylc) is a CS student working in AI models for audio, speech, and music generation.
 
 [Zifan Wu @ CNU](https://www.zhihu.com/people/MathCyclus/) is a Math Teacher who has more than 100K fans.
+
+[Haoyu Tang @ RUC](https://himalalps.github.io/) is my roommate in USTC.
+
