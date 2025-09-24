@@ -2,7 +2,4 @@ github_users:
   - hanquanjushi
 
 github_repos:
-  - hanquanjushi/SysY-Compiler
-  # - hanquanjushi/x-dontpanic
-  # - hanquanjushi/USTC-CS-Resources
-  # - hanquanjushi/presto-HDFS-read-data
+  - hanquanjushi/SysY-Compiler 
