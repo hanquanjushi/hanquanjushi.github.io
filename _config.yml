@@ -6,7 +6,7 @@ title: blank # the website title (if blank, full name will be used instead)
 first_name: Zhaoyang
 middle_name: 
 last_name: Zhang
-email: ZhaoyangZhang@cs.cmu.edu
+email: zhaoyang.zhang@connect.ust.hk
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 footer_text: >
@@ -67,13 +67,13 @@ og_image: # The site-wide (default for all links) Open Graph preview image
 # Social integration
 # -----------------------------------------------------------------------------
 
-github_username: ZhaoyangZhang # your GitHub user name
+github_username: hanquanjushi # your GitHub user name
 gitlab_username: # your GitLab user name
-twitter_username: Zhaoyang_Zhang # your Twitter handle
+twitter_username:  # your Twitter handle
 linkedin_username: # your LinkedIn user name
-scholar_userid: XPpKrNgAAAAJ # your Google Scholar ID
+scholar_userid: 0sNkFYAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
-orcid_id: 0009-0002-9546-8599 # your ORCID ID
+orcid_id: 0009-0004-9911-4602 # your ORCID ID
 medium_username: # your Medium username
 quora_username: # your Quora username
 publons_id: # your ID on Publons
@@ -90,9 +90,9 @@ spotify_id: # your spotify id
 pinterest_id: # your pinterest id
 unsplash_id: # your unsplash id
 instagram_id: # your instagram id
-facebook_id: 100085549112788 # your facebook id
+facebook_id:  # your facebook id
 discord_id:  # your discord id (18-digit unique numerical identifier)
-telegram_id: dopanic # your telegram id
+telegram_id:  # your telegram id
 
 contact_note: >
   Feel free to reach out
@@ -113,7 +113,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: ROLL ! # blog_name will be displayed in your blog page
 blog_nav_title: blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: Experience in Application to PhD program, Caching, etc
+blog_description: Experience in USTC, etc
 permalink: /blog/:year/:title/
 
 # Pagination
@@ -223,7 +223,7 @@ jekyll-archives:
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
 
-display_tags: ['经验分享', 'cache', 'cloud', 'mrc-generation', 'elasiticity','modeling', 'ml'] # this tags will be dispalyed on the front page of your blog
+display_tags: ['经验分享', 'AIGC'] # this tags will be dispalyed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

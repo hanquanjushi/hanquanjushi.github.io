@@ -7,12 +7,12 @@ subtitle:
 
 profile:
   align: right
-  image: myphoto.jpeg
+  image: myphoto.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>GHC 5007</p>
-    <p>4902 Forbes Ave</p>
-    <p>Pittsburgh, PA 15213</p>
+    <p>Tower B</p>
+    <p>HKUST</p>
+    <p>Hong, Kong</p>
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
