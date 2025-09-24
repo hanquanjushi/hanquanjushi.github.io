@@ -19,4 +19,4 @@ selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true  # includes social icons at the bottom of the page
 ---
 
-I am Zhaoyang Zhang (张朝阳 in Chinese), a first-year PhD student in the Computer Science and Engineering Department at HKUST, advised by [Jiasi Shen](https://shenjiasi.com/) . I am interested in programm sythesis, program translation, and their applications in software engineering.
+I am Zhaoyang Zhang (张朝阳 in Chinese), a first-year PhD student in the Computer Science and Engineering Department at The Hong Kong University of Science and Technology (HKUST), advised by [Jiasi Shen](https://shenjiasi.com/) . I am interested in programm sythesis, program translation, and their applications in software engineering.
