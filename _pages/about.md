@@ -20,5 +20,3 @@ social: true  # includes social icons at the bottom of the page
 ---
 
 I am Zhaoyang Zhang (张朝阳 in Chinese), a first-year PhD student in the Computer Science and Engineering Department at HKUST, advised by [Jiasi Shen](https://shenjiasi.com/) . I am interested in programm sythesis, program translation, and their applications in software engineering.
-
-Previously, I was fortunate to work with Prof. [Cheng Li](http://staff.ustc.edu.cn/~chengli7/) at USTC, Prof. [Xiaosong Ma](https://www.hbku.edu.qa/en/staff/dr-xiaosong-ma) at Qatar Computing Research Institute & HKBU, Dr. [Qi Chen](https://www.microsoft.com/en-us/research/people/cheqi/), Dr. [Mao Yang](https://www.microsoft.com/en-us/research/people/maoyang/) at MSR-Asia.
