@@ -16,3 +16,5 @@ nav_order: 6
 [Haoyu Tang @ RUC](https://himalalps.github.io/) is my classmate in USTC working on NLP and LLM.
 
 [Zifan Wu @ CNU](https://www.zhihu.com/people/MathCyclus/) is a Math Teacher who has more than 100K fans.
+
+[Zexuan Yan @ SJTU](https://yuriyanzexuan.github.io/homepage/) is my classmate in USTC working on AI and computer vision.
