@@ -1,0 +1,81 @@
+docker run -it  -v /home/hq/Work/tipc-passes:/tip/tipc-passes  molepi/tipc
+
+
+
+
+antlr4 -Dlanguage=Cpp -listener -visitor -o generated/ -package spec Spec.g4
+
+cmake -DCMAKE_C_FLAGS="-O0 -g -DNDEBUG" -DCMAKE_CXX_FLAGS="-O0 -g -DNDEBUG" -DCMAKE_C_COMPILER=gclang -DCMAKE_CXX_COMPILER=gclang++ -DCMAKE_BUILD_TYPE=Debug ..
+
+find ~/SVF-T -name "*.dot" -type f -delete
+
+clang -S -emit-llvm -g main.c -o main.ll
+gclang -o output_executable *.c
+
+CC=gclang CXX=gclang++ ./configure
+CC="gclang" CXX="gclang++" ./configure CFLAGS="-O0 -g -fno-inline-functions" CXXFLAGS="-O0 -g -fno-inline-functions" --enable-win64
+make
+
+clang -Xclang -ast-dump -fno-color-diagnostics -fsyntax-only gzread.c > ast_output.txt
+/home/zhangzhaoyang/SVF-Tlsy2/SVF-T/bench/projects/aliasing
+llvm-as -o test.bc test.ll
+llvm-dis example.bc
+clang -Xclang -ast-dump -fsyntax-only test3builtin.c
+__builtin__
+ 
+-DCMAKE_BUILD_TYPE=Debug -DSVF_ENABLE_ASSERTIONS:BOOL=true -G "Unix Makefiles" -DBUILD_SHARED_LIBS=off -S "/home/zhangzhaoyang/SVF-T" -B "/home/zhangzhaoyang/SVF-T/cmake-build-debug"
+
+LLVM_DIR=/home/zhangzhaoyang/SVF-T/llvm-14.0.0.obj
+Z3_DIR=/home/zhangzhaoyang/SVF-T/z3.obj
+
+-srcpath=/home/zhangzhaoyang/SVF-T/bench/projects/aliasing/ /home/zhangzhaoyang/SVF-T/bench/projects/aliasing/test.ll
+
+gllvm使用文档
+https://docs.google.com/spreadsheets/d/1oEbzZbdpBp-Ro8hqcyo1S1ZEraufnzy9WbRwoHBX2kY/edit#gid=0
+
+while loop invirant证明
+https://docs.google.com/document/d/15U2U1_7P8jKdbgHtqcwwtXjyLTQ3LtlxqZRnKgdzmOw/edit
+
+while loop转换过程
+https://docs.google.com/document/d/1OJKNmjNt3Q4tTImvpl7tqXs3RkxSuMbrl6pIgAz7JiY/edit
+
+
+"{ \"ln\": 15, \"cl\": 12, \"fl\": \"test1.c\" }"
+scope大括号的起始和终止范围 call:所在的scope
+branch:所在的scope和跳转位置的scope
+所在的ASTnode 和
+
+ 
+
+
+call所在的函数范围和语句本身的位置都需要
+补充for、else的实现
+read parse之后变化
+#include <cstdio> read fread 
+unistd 
+多文件项目编译成大的ir文件，指定value后能否知道文件的绝对地址，之后去parse原来的文件
+找到信息
+gllvm
+
+
+clang builtin Function
+__builtin__read 
+在ir里提取字符串
+
+ir里面拿到call的行数看是不是和vardecl一样，判断是不是第一次定义
+确认有返回值的函数是否真的返回给一个变量
+
+1.给定函数llvm function 指针 找到他的绝对路径
+2.函数的def和decl都在头文件 能不能找到头文件绝对路径
+如果只有声明在头文件，定义在c文件，能不能找到声明的绝对路径
+3.如果只给头文件，能不能用clang的api parse成ast
+4.如果一个头文件/.c只是语法正确，但不能编译a=b,a没有声明，得到ast
+fread 
+clang builtin Function
+
+
+问题：ForStmt被替换成CXCursor_StructDecl，IfStmt变成CXCursor_UnionDecl
+
+
+ 
+ 
