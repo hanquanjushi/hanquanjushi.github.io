@@ -7,4 +7,4 @@ nav: true
 nav_order: 5
 ---
 
-I have not taught any courses yet.
+Haven't taught any courses yet.

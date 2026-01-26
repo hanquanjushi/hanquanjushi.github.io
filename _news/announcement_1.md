@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2025-09-24 21:10:00-0400
+date: 2026-01-01 14:00:00-0400
 inline: true
 ---
 
-New theme for my homepage! New start in HKUST.
+Happy New Year 2026!

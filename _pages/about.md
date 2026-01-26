@@ -9,10 +9,9 @@ profile:
   align: right
   image: myphoto.jpg
   image_circular: false # crops the image to make it circular
-  address: >
-    <p>Tower B</p>
-    <p>HKUST</p>
-    <p>Hong, Kong</p>
+  address: > 
+    <p>Hong Kong University of Science and Technology</p>
+    <p>Hong Kong</p>
 
 news: true  # includes a list of news items
 selected_papers: false # includes a list of papers marked as "selected={true}"
