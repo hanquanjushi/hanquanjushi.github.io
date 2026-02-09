@@ -7,4 +7,4 @@ nav: true
 nav_order: 5
 ---
 
-Haven't taught any courses yet.
+2026, TA, COMP 4321 Search Engines for Web and Enterprise Data (Spring), HKUST
